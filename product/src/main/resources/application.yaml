@@ -1,0 +1,33 @@
+server:
+  max-http-header-size: 16KB
+  port: 5000
+  tomcat:
+    accept-count: ${TOMCAT_ACCEPT_COUNT:100}
+    max-connections: ${TOMCAT_MAX_CONNECTIONS:8192}
+    threads:
+      max: ${TOMCAT_MAX_THREADS:200}
+      min-spare: ${TOMCAT_MIN_SPARE_THREADS:10}
+    processor-cache: ${TOMCAT_PROCESSOR_CACHE:200}
+spring:
+  application:
+    name: product
+
+feign:
+  client:
+    config:
+      default:
+        loggerLevel: full
+
+
+logging:
+  level:
+    com.klagan.product.*: INFO
+
+# ======================
+# K-LAGAN Microservices
+# ======================
+klagan:
+  service:
+    product:
+      host: http://localhost:3001
+      path: /

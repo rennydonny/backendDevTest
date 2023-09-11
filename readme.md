@@ -31,3 +31,14 @@ The following topics will be considered:
 - Code clarity and maintainability
 - Performance
 - Resilience
+
+## Solution
+1. Clone the repository: `git clone git@github.com:rennydonny/backendDevTest.git`
+2. First of all, you may need to enable file sharing for the `shared` folder on your docker dashboard -> settings -> resources -> file sharing.
+3. After above instructions change directory: `cd product` 
+4. And then to execute the solution: `./gradlew bootRun`
+5. To execute the test run:
+```
+docker-compose run --rm k6 run scripts/test.js
+```
+6. Browse [http://localhost:3000/d/Le2Ku9NMk/k6-performance-test](http://localhost:3000/d/Le2Ku9NMk/k6-performance-test) to view the results.
